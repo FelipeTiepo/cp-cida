@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-public class EventoService {
+public class    EventoService {
 
     @Autowired
     private EventoRepository repository;
@@ -54,7 +54,7 @@ public class EventoService {
 
     }
     @Transactional
-    private void delete(Long id){
+    public void delete(Long id){
         if (!repository.existsById(id)) {
             throw new IllegalArgumentException("Recurso inválido - id:" + id);
         }
