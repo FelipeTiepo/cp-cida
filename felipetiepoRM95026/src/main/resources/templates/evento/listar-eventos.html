@@ -15,9 +15,9 @@
                     <thead>
                     <tr>
                         <th>Nome</th>
-                        <th>Descrição</th>
+                        <th>Data</th>
+                        <th>URL</th>
                         <th>Cidade</th>
-                        <th>Valor</th>
                         <th>Ações</th>
                     </tr>
                     </thead>
@@ -27,11 +27,10 @@
                     </tr>
                     <tr th:each="evento : ${eventos}" >
                         <td><span th:text="${evento.nome}"> Nome </span></td>
-                        <td><span th:text="${evento.descricao}"> Descrição </span></td>
+                        <td><span th:text="${evento.data}"> Data </span></td>
                         <td><span th:text="${evento.cidade.nome}"> Cidade </span></td>
-                        <td><span th:text="${evento.valor}"> Valor </span></td>
                         <td>
-                            <form th:action="@{/produtos/{id}(id=${produto.id})}" th:object="${evento}" method="post">
+                            <form th:action="@{/eventos/{id}(id=${evento.id})}" th:object="${evento}" method="post">
                                 <input type="hidden" name="_method" value="delete">
 
                                 <input class="btn btn-danger btn-xs" type="submit" value="Excluir"

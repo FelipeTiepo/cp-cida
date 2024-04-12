@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-public class    EventoService {
+public class EventoService {
 
     @Autowired
     private EventoRepository repository;
