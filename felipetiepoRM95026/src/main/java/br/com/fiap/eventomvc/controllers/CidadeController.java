@@ -16,7 +16,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/cidades")
-public class CidadeController {
+public class CategoriaController {
 
     @Autowired
     private CidadeService service;
@@ -43,6 +43,7 @@ public class CidadeController {
     @GetMapping()
     public String findAll(Model model) {
         List<Cidade> cidades = service.findAll();
+//        model.addAttribute("categorias", repository.findAll());
         model.addAttribute("cidades", cidades);
         return "/cidade/listar-cidades";
     }
